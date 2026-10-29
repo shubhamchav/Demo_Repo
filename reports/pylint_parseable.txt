@@ -1,0 +1,57 @@
+﻿************* Module todo_app.cli
+todo_app\cli.py:28: [C0301(line-too-long), ] Line too long (155/100)
+todo_app\cli.py:9: [C0116(missing-function-docstring), format_summary] Missing function or method docstring
+todo_app\cli.py:14: [C0209(consider-using-f-string), format_summary] Formatting a regular string which could be an f-string
+todo_app\cli.py:11: [W0612(unused-variable), format_summary] Unused variable 'status'
+todo_app\cli.py:18: [C0116(missing-function-docstring), printTasks] Missing function or method docstring
+todo_app\cli.py:18: [C0103(invalid-name), printTasks] Function name "printTasks" doesn't conform to snake_case naming style
+todo_app\cli.py:27: [C0116(missing-function-docstring), build_parser] Missing function or method docstring
+todo_app\cli.py:48: [C0116(missing-function-docstring), handle_remove] Missing function or method docstring
+todo_app\cli.py:51: [E0602(undefined-variable), handle_remove] Undefined variable 'taskId'
+todo_app\cli.py:55: [C0116(missing-function-docstring), main] Missing function or method docstring
+************* Module todo_app.manager
+todo_app\manager.py:14: [C0116(missing-function-docstring), TaskManager.add_task] Missing function or method docstring
+todo_app\manager.py:14: [R0913(too-many-arguments), TaskManager.add_task] Too many arguments (6/5)
+todo_app\manager.py:14: [R0917(too-many-positional-arguments), TaskManager.add_task] Too many positional arguments (6/5)
+todo_app\manager.py:16: [W0603(global-statement), TaskManager.add_task] Using the global statement
+todo_app\manager.py:23: [C0116(missing-function-docstring), TaskManager.remove_task] Missing function or method docstring
+todo_app\manager.py:26: [C0116(missing-function-docstring), TaskManager.list_tasks] Missing function or method docstring
+todo_app\manager.py:26: [W0102(dangerous-default-value), TaskManager.list_tasks] Dangerous default value [] as argument
+todo_app\manager.py:32: [C0116(missing-function-docstring), TaskManager.complete_task] Missing function or method docstring
+todo_app\manager.py:40: [C0116(missing-function-docstring), TaskManager.update_task] Missing function or method docstring
+todo_app\manager.py:40: [R0913(too-many-arguments), TaskManager.update_task] Too many arguments (9/5)
+todo_app\manager.py:40: [R0917(too-many-positional-arguments), TaskManager.update_task] Too many positional arguments (9/5)
+todo_app\manager.py:63: [C0116(missing-function-docstring), TaskManager.find_task] Missing function or method docstring
+todo_app\manager.py:63: [R1710(inconsistent-return-statements), TaskManager.find_task] Either all return statements in a function should return an expression, or none of them should.
+todo_app\manager.py:63: [W0613(unused-argument), TaskManager.find_task] Unused argument 'verbose'
+todo_app\manager.py:69: [C0116(missing-function-docstring), TaskManager.summarize] Missing function or method docstring
+todo_app\manager.py:74: [C0209(consider-using-f-string), TaskManager.summarize] Formatting a regular string which could be an f-string
+todo_app\manager.py:71: [W0612(unused-variable), TaskManager.summarize] Unused variable 'status'
+************* Module todo_app.models
+todo_app\models.py:6: [C0115(missing-class-docstring), Task] Missing class docstring
+todo_app\models.py:6: [R0902(too-many-instance-attributes), Task] Too many instance attributes (10/7)
+todo_app\models.py:8: [R0913(too-many-arguments), Task.__init__] Too many arguments (9/5)
+todo_app\models.py:8: [R0917(too-many-positional-arguments), Task.__init__] Too many positional arguments (9/5)
+todo_app\models.py:21: [C0116(missing-function-docstring), Task.mark_done] Missing function or method docstring
+todo_app\models.py:24: [C0116(missing-function-docstring), Task.is_overdue] Missing function or method docstring
+todo_app\models.py:25: [C0121(singleton-comparison), Task.is_overdue] Comparison 'self.due_date == None' should be 'self.due_date is None'
+todo_app\models.py:29: [C0116(missing-function-docstring), Task.to_dict] Missing function or method docstring
+todo_app\models.py:44: [C0116(missing-function-docstring), Task.from_dict] Missing function or method docstring
+************* Module todo_app.storage
+todo_app\storage.py:19: [W0718(broad-exception-caught), load_tasks] Catching too general exception Exception
+todo_app\storage.py:5: [W0611(unused-import), ] Unused import sys
+todo_app\storage.py:1: [R0801(duplicate-code), ] Similar lines in 2 files
+==todo_app.cli:[10:18]
+==todo_app.manager:[70:75]
+    status = "done" if task.done else "pending"
+    priority = task.priority or "medium"
+    due = task.due_date or "no due date"
+    return "[{}] {} (priority={}, due={})".format(task.task_id, task.title,
+                                                    priority, due)
+
+
+def printTasks(tasks):  # C0103: invalid-name, camelCase function (intentional)
+
+------------------------------------------------------------------
+Your code has been rated at 7.09/10 (previous run: 7.09/10, +0.00)
+
